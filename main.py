@@ -30,6 +30,9 @@ def main():
     ### add asteroids to groups
     Asteroid.containers = (updateable, drawable, asteroids)
 
+    ### add shots to groups
+    Shot.containers = (updateable, drawable, shots)
+
     ### instantiate Player and add to groups
     Player.containers = (updateable, drawable)
     player = Player(x = SCREEN_WIDTH / 2, y = SCREEN_HEIGHT / 2)
@@ -51,7 +54,6 @@ def main():
             if player.collides_with(asteroid):
                 print("Game over!")
                 sys.exit("You've been hit by an asteroid. Game over!")
-
         for sprite in drawable:
             sprite.draw(screen)
         pygame.display.flip()        
