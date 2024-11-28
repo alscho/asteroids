@@ -1,4 +1,5 @@
 import pygame
+import sys
 
 ### import own files
 from constants import *
@@ -45,6 +46,11 @@ def main():
         screen.fill(color="#000000")
         for sprite in updateable:
             sprite.update(dt)
+        for asteroid in asteroids:
+            if player.collides_with(asteroid):
+                print("Game over!")
+                sys.exit("You've been hit by an asteroid. Game over!")
+
         for sprite in drawable:
             sprite.draw(screen)
         pygame.display.flip()        
