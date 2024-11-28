@@ -27,6 +27,7 @@ def main():
 
         ### blacken screen and draw player
         screen.fill(color="#000000")
+        player.update(dt)
         player.draw(screen)
         pygame.display.flip()        
 
